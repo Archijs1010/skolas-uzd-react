@@ -1,4 +1,4 @@
-function TodoItem({ todo, onToggle }) {
+function TodoItem({ todo, onToggle, onDelete }) {
   return (
     <li>
       <input
@@ -9,6 +9,7 @@ function TodoItem({ todo, onToggle }) {
       <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
         {todo.text}
       </span>
+      <button onClick={() => onDelete(todo.id)}>Dzēst</button>
     </li>
   );
 }
